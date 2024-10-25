@@ -8,16 +8,16 @@ import utils.CommonMethods;
 public class AddEmployeePage extends CommonMethods {
 
     @FindBy(id="firstName")
-    public WebElement FirstName;
+    public static WebElement FirstName;
 
     @FindBy(id="middleName")
     public WebElement MiddleName;
 
     @FindBy(id="lastName")
-    public WebElement LastName;
+    public static WebElement LastName;
 
     @FindBy(id="employeeId")
-    public WebElement empID;
+    public static WebElement empID;
 
     @FindBy(id="btnSave")
     public WebElement SaveButton;
@@ -35,7 +35,7 @@ public class AddEmployeePage extends CommonMethods {
     public WebElement pimOption;
 
     @FindBy(xpath = "//div[@class='message warning fadable']")
-    public WebElement existingEmpIdErrorMsg;
+    public static WebElement existingEmpIdErrorMsg;
 
     public AddEmployeePage(){
 
