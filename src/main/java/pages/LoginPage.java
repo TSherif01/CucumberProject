@@ -1,33 +1,27 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utils.CommonMethods;
 
-public class LoginPage {
-    WebDriver driver;
+import java.util.List;
 
-    By usernameField = By.id("username");
-    By passwordField = By.id("password");
-    By loginButton = By.id("loginButton");
-    By errorMessage = By.id("errorMessage");
+public class LoginPage extends CommonMethods {
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    @FindBy (id ="btnLogin")
+    public WebElement loginButton;
 
-    public void enterUsername(String username) {
-        driver.findElement(usernameField).sendKeys(username);
-    }
+    @FindBy(id="spanMessage")
+    public WebElement ErrorMsg;
 
-    public void enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
-    }
+    @FindBy(id="txtUsername")
+    public WebElement userName;
 
-    public void clickLogin() {
-        driver.findElement(loginButton).click();
-    }
+    @FindBy(id="txtPassword")
+    public WebElement Password;
 
-    public String getErrorMessage() {
-        return driver.findElement(errorMessage).getText();
+    public LoginPage(){
+        PageFactory.initElements(driver, this);
     }
 }

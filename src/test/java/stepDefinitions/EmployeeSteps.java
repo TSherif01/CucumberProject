@@ -3,17 +3,17 @@ package stepDefinitions;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.EmployeePage;
+import pages.AddEmployeePage;
 
 public class EmployeeSteps {
     WebDriver driver;
-    EmployeePage employeePage;
+    AddEmployeePage employeePage;
 
     @Given("I am on the Add Employee page")
     public void i_am_on_the_Add_Employee_page() {
         driver = new ChromeDriver();
         driver.get("http://example.com/addEmployee"); // Replace with actual URL
-        employeePage = new EmployeePage(driver);
+        employeePage = new AddEmployeePage();
     }
 
     @When("I add an employee with first name {string}, middle name {string}, last name {string} and employee ID {string}")
